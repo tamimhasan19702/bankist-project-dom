@@ -10,6 +10,8 @@
 
     <!-- Google fonts -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet"/>
 
     <!-- custom css -->
@@ -22,8 +24,9 @@
 <header class="header">
     
     <nav class="nav">
-        <img src="./img/logo.png" alt="Bankist logo" class="nav-logo">
-    
+       <a href="#"> <img src="./img/logo.png" alt="Bankist logo" class="nav-logo"></a>
+   
+    <div class="nav-menu">
     <ul class="nav-links">
       <li class="nav-item">
        <a href="#section-1" class="nav-link">Features</a>
@@ -37,15 +40,23 @@
       <li class="nav-item">
        <a href="#" class="nav-link nav-link-btn btn--show-modal">Open account</a>
       </li>
+      
     </ul>
-    </nav>
+    <i class="fa-solid fa-xmark mobile-close"></i>
+</div>
+
+   <div class="mobile-menu">
+   <i class="fa-solid fa-bars"></i>
+</div>
+    
+     </nav>
 
     <div class="header-title">
-        <h1>When <span class="highlight">banking</span> meets <br/>
+        <h1 class="grid-item-1">When <span class="highlight">banking</span> meets <br/>
         <span class="highlight"> minimalist </span></h1>
         <h4>A simpler banking experience for a simpler life.</h4>
         <button class="btn-text btn-scroll-to">Learn more &DownArrow; </button>
-     <img src="img/hero.png" alt="minimalist bank items" class="header-img">  
+     <img src="img/hero.png" alt="minimalist bank items" class="header-img grid-item-2">  
     </div>
 
 </header>
@@ -76,7 +87,9 @@
             debitis ducimus.
           </p>
         </div>
-
+        
+        <img src="./img/grow-lazy.jpg" alt="plant" data-src="./img/grow.jpg" class="features-img lazy-img features-sp-1">
+        
         <div class="features-feature">
             <div class="features-icon">
                 <svg>
@@ -91,7 +104,7 @@
           </p>
         </div>
 
-        <img src="./img/grow-lazy.jpg" alt="plant" data-src="./img/grow.jpg" class="features-img lazy-img">
+        <img src="./img/grow-lazy.jpg" alt="plant" data-src="./img/grow.jpg" class="features-img lazy-img features-sp-2">
 
         <img src="./img/card-lazy.jpg" alt="credit card" data-src="./img/card.jpg" class="features-img lazy-img">
 
