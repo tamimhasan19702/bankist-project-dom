@@ -737,6 +737,13 @@ cursor: pointer;
    .footer-mob-2{
     flex-direction: column;
    }
+   .header .cookie-massage{
+    position: fixed;
+    width: fit-content;
+    font-size: 1.2rem;
+    top: 69rem;
+    z-index: 1000;
+}
 }
 
 

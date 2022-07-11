@@ -55,3 +55,12 @@ header.append(message);
 document.querySelector('.btn-close-cookie').addEventListener('click', ()=> message.remove());
 message.style.backgroundColor = '#37383d'
 message.style.width = '120%'
+
+// =========================================================
+
+const btnScrollTo = document.querySelector('.btn-scroll-to');
+const sectionOne = document.querySelector('#scroll-into');
+
+btnScrollTo.addEventListener('click', () => {
+  sectionOne.scrollIntoView({behavior : "smooth" })
+})
