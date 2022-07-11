@@ -41,3 +41,17 @@ mobileMenu.addEventListener('click', () => {
 mobileClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu')
 })
+
+// ===============================================================
+
+const header = document.querySelector('.header');
+const message = document.createElement('div');
+message.classList.add('cookie-massage');
+
+message.innerHTML = 'We use cookies to improved functionality and analytics. <button class="btn btn-close-cookie">Got it!</button>';
+
+header.append(message);
+
+document.querySelector('.btn-close-cookie').addEventListener('click', ()=> message.remove());
+message.style.backgroundColor = '#37383d'
+message.style.width = '120%'
