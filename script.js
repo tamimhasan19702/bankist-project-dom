@@ -33,6 +33,8 @@ for (let i = 0; i < btnOpenModal.length; i++)
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileClose = document.querySelector('.mobile-close');
 const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelector('.nav-links');
+const navLink = document.querySelectorAll('.nav-link');
 
 mobileMenu.addEventListener('click', () => {
    navMenu.classList.add('show-menu')
@@ -40,6 +42,13 @@ mobileMenu.addEventListener('click', () => {
 
 mobileClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu')
+})
+
+navLinks.addEventListener('click' , (e) => {
+    e.preventDefault();
+    if(e.target.classList.contains('nav-link')){
+        navMenu.classList.remove('show-menu')
+    }
 })
 
 // ===============================================================
@@ -67,7 +76,7 @@ btnScrollTo.addEventListener('click', () => {
 
 // ==========================================================
 
-document.querySelector('.nav-links').addEventListener('click', e => {
+navLinks.addEventListener('click', e => {
     e.preventDefault();
 
     if(e.target.classList.contains('nav-link')){
