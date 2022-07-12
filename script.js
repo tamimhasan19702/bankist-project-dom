@@ -64,3 +64,46 @@ const sectionOne = document.querySelector('#scroll-into');
 btnScrollTo.addEventListener('click', () => {
   sectionOne.scrollIntoView({behavior : "smooth" })
 })
+
+// ==========================================================
+
+document.querySelector('.nav-links').addEventListener('click', e => {
+    e.preventDefault();
+
+    if(e.target.classList.contains('nav-link')){
+        const id = e.target.getAttribute('href');
+        console.log(id);
+        document.querySelector(id).scrollIntoView({behavior : 'smooth'});
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==============================================
+
+// const randomInt = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
+
+// const randomColor = () => `${randomInt(255 , 0)}, ${randomInt(255 , 0)},${randomInt(255 , 0)}`;
+// console.log(randomColor());
+
+// document.querySelector('.nav-link').addEventListener('click', () => {
+//     document.body.style.backgroundColor = 'Green';
+   
+// })
