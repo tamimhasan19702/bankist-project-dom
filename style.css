@@ -633,7 +633,20 @@ cursor: pointer;
     display: none;
 }
 
+::-webkit-scrollbar{
+    width: 15px;
+}
 
+::-webkit-scrollbar-thumb{
+  background-color : var(--color-primary);
+  border-radius: 5%;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--color-primary-darker);
+}
+::-webkit-scrollbar-track{
+    background-color: rgba(0,0,0,0.1);
+}
 /* resposiveness */
 
 @media screen and (max-width:950px) {
