@@ -110,10 +110,6 @@ img{
     height: 9rem;
     width: 100%;
     padding: 0 6rem;
-    z-index: 100;
-    position: fixed;
-    background-color: #fff;
-    box-shadow: 0rem 0rem 0.1rem 0rem #333;
 }
 
 .nav.sticky{
@@ -170,7 +166,6 @@ img{
     align-items: center;
 }
 .header-title{
-    padding-top: 200px;
     flex: 1;
     max-width: 115rem;
     display: grid;

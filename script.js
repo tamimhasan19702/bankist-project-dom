@@ -132,8 +132,16 @@ nav.addEventListener('mouseover',  handelHover.bind(0.5));
 
 nav.addEventListener('mouseout', handelHover.bind(1));
 
+// ==========================================================
 
+const initialChords = sectionOne.getBoundingClientRect();
 
+window.addEventListener('scroll', () => {
+
+if(window.scrollY > initialChords.top) nav.classList.add('sticky');
+else nav.classList.remove('sticky');
+
+})
 
 
 
