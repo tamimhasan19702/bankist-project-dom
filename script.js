@@ -132,16 +132,42 @@ nav.addEventListener('mouseover',  handelHover.bind(0.5));
 
 nav.addEventListener('mouseout', handelHover.bind(1));
 
-// ==========================================================
+// // ==========================================================
 
-const initialChords = sectionOne.getBoundingClientRect();
+// const initialChords = sectionOne.getBoundingClientRect();
 
-window.addEventListener('scroll', () => {
+// window.addEventListener('scroll', () => {
 
-if(window.scrollY > initialChords.top) nav.classList.add('sticky');
-else nav.classList.remove('sticky');
+// if(window.scrollY > initialChords.top) nav.classList.add('sticky');
+// else nav.classList.remove('sticky');
 
-})
+// })
+
+const navHeight = nav.getBoundingClientRect().height;
+console.log(navHeight);
+
+const stickyNav = function(entries){
+    const [entry] = entries;
+    console.log(entry);
+
+    if(!entry.isIntersecting) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+
+};
+
+const headerObserver = new IntersectionObserver(
+    stickyNav , {
+        root: null,
+        threshold: 0,
+        rootMargin: `-${navHeight}px`
+    });
+
+    headerObserver.observe(header);
+// ================================================================
+
+
+
+
 
 
 

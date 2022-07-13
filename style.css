@@ -115,6 +115,8 @@ img{
 .nav.sticky{
     position: fixed;
     background-color: rgba(255,255,255,0.95);
+    z-index: 100;
+    transition: 0.3 ease;
 }
 .nav-logo{
     height: 4.5rem;
@@ -737,6 +739,7 @@ cursor: pointer;
     grid-template-columns: 1fr 1fr;
     row-gap: 3rem;
    }
+
    .footer-nav{
     grid-template-columns: 1fr 1fr;
     text-align: center;
@@ -752,6 +755,23 @@ cursor: pointer;
     font-size: 1.2rem;
     top: 69rem;
     z-index: 1000;
+
+}
+
+.operations-tab-3{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0 10rem;
+}
+.operations-content{
+    font-size: 1.5rem;
+    padding: 2rem 3rem;
+}
+.operations-content-active{
+    display: grid;
+    grid-template-columns: repeat(1fr , 2fr);
+    column-gap: 3rem;
+    row-gap: 0.5rem;
 }
 }
 
