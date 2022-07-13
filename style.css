@@ -492,17 +492,14 @@ cursor: pointer;
 .footer-nav{
     list-style: none;
     margin: 0 auto;
-    display: grid;
-    width: 50%;
-    text-align: center;
-    grid-template-columns: 2fr 2fr;
-}
-.footer-mob-1,
-.footer-mob-2{
     display: flex;
-     flex-direction: row;
-    gap: 0rem;
-    }
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
 .footer-item{
     margin-right: 4rem;
 }
@@ -741,13 +738,12 @@ cursor: pointer;
    }
 
    .footer-nav{
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-column: 2;
+    column-gap: 5rem;
+    grid-template-columns:1fr 1fr;
     text-align: center;
     width: 100%;
-   }
-   .footer-mob-1,
-   .footer-mob-2{
-    flex-direction: column;
    }
    .header .cookie-massage{
     position: fixed;
