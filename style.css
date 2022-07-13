@@ -694,7 +694,7 @@ cursor: pointer;
     right: 0%;
    }
    .header-title{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
    }
    .header-title h1{
     font-size: 3rem;

@@ -5,6 +5,22 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn-close-modal');
 const btnOpenModal = document.querySelectorAll('.btn-show-modal');
 
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileClose = document.querySelector('.mobile-close');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelector('.nav-links');
+const navLink = document.querySelectorAll('.nav-link');
+
+const header = document.querySelector('.header');
+const message = document.createElement('div');
+
+const btnScrollTo = document.querySelector('.btn-scroll-to');
+const sectionOne = document.querySelector('#scroll-into');
+
+const tabs = document.querySelectorAll('.operations-tab');
+const tabsContainer = document.querySelector('.operations-tab-container');
+const tabsContent = document.querySelectorAll('.operations-content');
+
 // ====================================================
 
 const openModal = function(){
@@ -30,11 +46,6 @@ for (let i = 0; i < btnOpenModal.length; i++)
 
 // ===============================================================
 
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileClose = document.querySelector('.mobile-close');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelector('.nav-links');
-const navLink = document.querySelectorAll('.nav-link');
 
 mobileMenu.addEventListener('click', () => {
    navMenu.classList.add('show-menu')
@@ -53,8 +64,6 @@ navLinks.addEventListener('click' , (e) => {
 
 // ===============================================================
 
-const header = document.querySelector('.header');
-const message = document.createElement('div');
 message.classList.add('cookie-massage');
 
 message.innerHTML = 'We use cookies to improved functionality and analytics. <button class="btn btn-close-cookie">Got it!</button>';
@@ -66,9 +75,6 @@ message.style.backgroundColor = '#37383d'
 message.style.width = '120%'
 
 // =========================================================
-
-const btnScrollTo = document.querySelector('.btn-scroll-to');
-const sectionOne = document.querySelector('#scroll-into');
 
 btnScrollTo.addEventListener('click', () => {
   sectionOne.scrollIntoView({behavior : "smooth" })
@@ -86,12 +92,21 @@ navLinks.addEventListener('click', e => {
     }
 })
 
+// =============================================================
 
+tabsContainer.addEventListener('click',function(e) {
+    const clicked = e.target.closest('.operations-tab');
 
+    console.log(clicked);
 
+    if(!clicked) return;
 
-
-
+    tabs.forEach(t => t.classList.remove('operations-tab-active'))
+    tabsContent.forEach(c => c.classList.remove('operations-content-active'))
+    
+    clicked.classList.add('operations-tab-active');  
+    document.querySelector(`.operations-content-${clicked.dataset.tab}`).classList.add('operations-content-active');
+});
 
 
 
