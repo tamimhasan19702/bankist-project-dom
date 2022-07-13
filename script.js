@@ -10,6 +10,7 @@ const mobileClose = document.querySelector('.mobile-close');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelector('.nav-links');
 const navLink = document.querySelectorAll('.nav-link');
+const nav = document.querySelector('.nav');
 
 const header = document.querySelector('.header');
 const message = document.createElement('div');
@@ -108,7 +109,28 @@ tabsContainer.addEventListener('click',function(e) {
     document.querySelector(`.operations-content-${clicked.dataset.tab}`).classList.add('operations-content-active');
 });
 
+// =========================================================
 
+const handelHover = function (e){
+    if(e.target.classList.contains('nav-link')){
+        const link = e.target;
+        const siblings = e.target.closest('.nav').querySelectorAll('.nav-link');
+        const logo = e.target.closest('.nav').querySelector('img');
+    
+        siblings.forEach(el => {
+            if(el !== link){
+                el.style.opacity =this;
+            }   
+        })
+        logo.style.opacity =this;
+    
+        }
+}
+
+
+nav.addEventListener('mouseover',  handelHover.bind(0.5));
+
+nav.addEventListener('mouseout', handelHover.bind(1));
 
 
 
