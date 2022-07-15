@@ -400,13 +400,12 @@ cursor: pointer;
     margin-right:1.75rem;
     cursor: pointer;
     transition: all 0.5s;
-    box-shadow: 0 0.6rem 1.5rem rgba(0,0,0,0.7);
 }
 .dots-dot:last-child{
     margin: 0;
 }
 .dots-dot-active{
-    background-color: #888;
+    background-color: black;
     opacity: 1;
 }
 .testimonial{
@@ -598,7 +597,7 @@ cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 100%;
+    width: 120%;
     background-color: white;
     color: #bbb;
     font-size: 1.3rem;
@@ -768,6 +767,23 @@ cursor: pointer;
     grid-template-columns: repeat(1fr , 2fr);
     column-gap: 3rem;
     row-gap: 0.5rem;
+}
+.header .cookie-massage{
+   display: none;
+}
+.dots{
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    
+}
+.testimonial-text{
+    font-size: 1.3rem;
+}
+.testimonial-header{
+    font-size: 1.7rem;
 }
 }
 

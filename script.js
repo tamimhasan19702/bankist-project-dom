@@ -23,6 +23,11 @@ const tabs = document.querySelectorAll('.operations-tab');
 const tabsContainer = document.querySelector('.operations-tab-container');
 const tabsContent = document.querySelectorAll('.operations-content');
 
+const slide = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+const btnLeft = document.querySelector('.slider-btn-left');
+const btnRight = document.querySelector('.slider-btn-right');
+
 // ====================================================
 
 const openModal = function(){
@@ -74,7 +79,7 @@ header.append(message);
 
 document.querySelector('.btn-close-cookie').addEventListener('click', ()=> message.remove());
 message.style.backgroundColor = '#37383d'
-message.style.width = '120%'
+
 
 // =========================================================
 
@@ -216,10 +221,7 @@ imgTargets.forEach(img => imgObserver.observe(img));
 
 // ===========================================================
 
-const slide = document.querySelectorAll('.slide');
-const slider = document.querySelector('.slider');
-const btnLeft = document.querySelector('.slider-btn-left');
-const btnRight = document.querySelector('.slider-btn-right');
+
 
 
 const maxSlide = slide.length;
@@ -249,6 +251,7 @@ const nextSlide = function(){
     }
  
     goToSlide(curSlide)
+    activeDot(curSlide)
  }
 
  const prevSlide =  function(){
@@ -260,14 +263,48 @@ const nextSlide = function(){
     }
  
     goToSlide(curSlide)
+    activeDot(curSlide)
  }
 
 btnRight.addEventListener('click', nextSlide)
 btnLeft.addEventListener('click', prevSlide)
 
 
+// =================================================
 
 
+document.addEventListener('keydown' , (e)=> {
+    console.log(e)
+    if(e.key === 'ArrowLeft') prevSlide();
+     e.key === 'ArrowRight' && nextSlide();
+})
+
+const dotContainer = document.querySelector('.dots');
+
+const createDots = function(){
+    slide.forEach(function( _ , i){
+     dotContainer.insertAdjacentHTML('beforeend',
+     `<button class="dots-dot" data-slide="${i}"></button>`
+     )
+    })
+}
+
+createDots()
+
+const activeDot = function(slide){
+    document.querySelectorAll('.dots-dot').forEach(dot => dot.classList.remove('dots-dot-active'));
+
+    document.querySelector(`.dots-dot[data-slide="${slide}"]`).classList.add('dots-dot-active');
+}
+activeDot(0);
+
+dotContainer.addEventListener('click' , (e) => {
+ if(e.target.classList.contains('dots-dot')){
+    const {slide} = e.target.dataset;
+    goToSlide(slide)
+    activeDot(slide)
+ }
+})
 
 
 
