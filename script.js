@@ -17,6 +17,7 @@ const message = document.createElement('div');
 
 const btnScrollTo = document.querySelector('.btn-scroll-to');
 const sectionOne = document.querySelector('#scroll-into');
+const allSections = document.querySelectorAll('.section');
 
 const tabs = document.querySelectorAll('.operations-tab');
 const tabsContainer = document.querySelector('.operations-tab-container');
@@ -165,9 +166,6 @@ const headerObserver = new IntersectionObserver(
     headerObserver.observe(header);
 // ================================================================
 
-
-const allSections = document.querySelectorAll('.section');
-
 const revealSection = function(entries, observer){
     const [entry] = entries;
 
@@ -187,6 +185,52 @@ allSections.forEach((section) => {
     sectionObserver.observe(section);
     section.classList.add('section-hidden');
 })    
+
+// ===========================================================
+
+const imgTaregets = document.querySelectorAll('img[data-src]');
+
+const loadImg = function(entries ,observer){
+   const [entry] = entries;
+
+   if(!entry.isIntersecting) return;
+
+   entry.target.src = entry.target.dataset.src
+
+   entry.target.addEventListener('load', function(){
+    entry.target.classList.remove('lazy-img');
+   })
+
+   observer.unobserve(entry.target);
+}
+
+const imgObserver = new IntersectionObserver(loadImg,
+    {
+    root: null,
+    threshold: 0,
+    }) 
+
+    
+imgTaregets.forEach(img => imgObserver.observe(img));    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
